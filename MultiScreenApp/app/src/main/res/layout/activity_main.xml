@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Taha's Cafe"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/editTextOrder1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Enter Order 1"
+        android:ems="10"
+        android:layout_margin="15dp"
+        android:inputType="textPersonName"
+        />
+    <EditText
+        android:id="@+id/editTextOrder2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Enter Order 2"
+        android:ems="10"
+        android:layout_margin="15dp"
+        android:inputType="textPersonName"
+            />
+    <EditText
+        android:id="@+id/editTextOrder3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Enter Order 3"
+        android:ems="10"
+        android:layout_margin="15dp"
+        android:inputType="textPersonName"
+        />
+    <EditText
+        android:id="@+id/editTextOrder4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Enter Order 4"
+        android:ems="10"
+        android:layout_margin="15dp"
+        android:inputType="textPersonName"
+        />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Order"
+        android:layout_margin="20dp"
+        />
+
+</LinearLayout>
