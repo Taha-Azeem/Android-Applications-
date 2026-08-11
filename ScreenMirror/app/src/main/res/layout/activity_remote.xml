@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B65ED">
+
+    <!-- Top Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/btnBackHeader"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_back_button_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:id="@+id/backBtn"
+                android:src="@drawable/ic_back_white"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="TV Remote"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnBackHeader"
+            app:layout_constraintStart_toEndOf="@id/btnBackHeader"
+            app:layout_constraintTop_toTopOf="@id/btnBackHeader" />
+
+        <ImageView
+            android:id="@+id/ivCast"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/casting_icon"
+            app:layout_constraintBottom_toBottomOf="@id/btnBackHeader"
+            app:layout_constraintEnd_toStartOf="@id/ivHelp"
+            app:layout_constraintTop_toTopOf="@id/btnBackHeader"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivHelp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_help_white"
+            app:layout_constraintBottom_toBottomOf="@id/btnBackHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBackHeader"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Main White Sheet -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/bg_white_sheet_rounded"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="32dp">
+
+            <!-- Top Row Controls -->
+            <FrameLayout
+                android:id="@+id/btnQuickBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_remote_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/right_arrow"
+                    android:rotation="180" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/segmentedControl"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="@drawable/bg_segmented_toggle_track"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                app:layout_constraintEnd_toStartOf="@id/btnSettings"
+                app:layout_constraintStart_toEndOf="@id/btnQuickBack"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="12dp" android:src="@drawable/num_icon" />
+                <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@drawable/bg_segmented_toggle_active" android:padding="12dp" android:src="@drawable/blue_icon" />
+                <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="12dp" android:src="@drawable/mouse_icon" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/btnSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_remote_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/setting" />
+            </FrameLayout>
+
+            <!-- Volume and Channel Row -->
+            <LinearLayout
+                android:id="@+id/volControl"
+                android:layout_width="60dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_remote_pill"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/segmentedControl">
+                <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/plus" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginVertical="8dp" android:fontFamily="@font/poppins_medium" android:text="Vol" android:textColor="#4B5563" android:textSize="13sp" />
+                <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/minus" />
+            </LinearLayout>
+
+            <!-- Center Grid Controls -->
+            <GridLayout
+                android:id="@+id/centerGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                app:layout_constraintBottom_toBottomOf="@id/volControl"
+                app:layout_constraintEnd_toStartOf="@id/chControl"
+                app:layout_constraintStart_toEndOf="@id/volControl"
+                app:layout_constraintTop_toTopOf="@id/volControl">
+
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:layout_margin="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/r_home" /></FrameLayout>
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:layout_margin="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/power" /></FrameLayout>
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:layout_margin="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/back" /></FrameLayout>
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:layout_margin="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/info" /></FrameLayout>
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:layout_margin="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/mute" /></FrameLayout>
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:layout_margin="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/r_more" /></FrameLayout>
+            </GridLayout>
+
+            <LinearLayout
+                android:id="@+id/chControl"
+                android:layout_width="60dp"
+                android:layout_height="130dp"
+                android:background="@drawable/bg_remote_pill"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/volControl">
+                <ImageView android:layout_width="22dp" android:layout_height="22dp"  android:src="@drawable/right_arrow" android:rotation="270"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginVertical="8dp" android:fontFamily="@font/poppins_medium" android:text="Ch" android:textColor="#4B5563" android:textSize="13sp" />
+                <ImageView android:layout_width="22dp" android:layout_height="22dp" android:rotation="90" android:src="@drawable/right_arrow"  />
+            </LinearLayout>
+
+            <!-- A, B, C, D and D-Pad Area -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dpadArea"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/volControl">
+
+                <View
+                    android:id="@+id/dpadBase"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/background_btn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/btnOk"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/bg_dpad_center"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:text="OK"
+                    android:textColor="#1F2937"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/dpadBase"
+                    app:layout_constraintEnd_toEndOf="@id/dpadBase"
+                    app:layout_constraintStart_toStartOf="@id/dpadBase"
+                    app:layout_constraintTop_toTopOf="@id/dpadBase" />
+
+                <!-- Arrows -->
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginTop="12dp" android:src="@drawable/up_arr" app:layout_constraintEnd_toEndOf="@id/dpadBase" app:layout_constraintStart_toStartOf="@id/dpadBase" app:layout_constraintTop_toTopOf="@id/dpadBase" />
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginBottom="12dp" android:rotation="180" android:src="@drawable/up_arr" app:layout_constraintBottom_toBottomOf="@id/dpadBase" app:layout_constraintEnd_toEndOf="@id/dpadBase" app:layout_constraintStart_toStartOf="@id/dpadBase" />
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="12dp" android:rotation="270" android:src="@drawable/up_arr" app:layout_constraintBottom_toBottomOf="@id/dpadBase" app:layout_constraintStart_toStartOf="@id/dpadBase" app:layout_constraintTop_toTopOf="@id/dpadBase" />
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginEnd="12dp" android:rotation="90" android:src="@drawable/up_arr" app:layout_constraintBottom_toBottomOf="@id/dpadBase" app:layout_constraintEnd_toEndOf="@id/dpadBase" app:layout_constraintTop_toTopOf="@id/dpadBase" />
+
+                <!-- Corner Letter Buttons -->
+                <TextView android:id="@+id/btnA" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_remote_circle" android:backgroundTint="#EF4444" android:elevation="2dp" android:gravity="center" android:text="A" android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <TextView android:id="@+id/btnC" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_remote_circle" android:backgroundTint="#F59E0B" android:elevation="2dp" android:gravity="center" android:text="C" android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <TextView android:id="@+id/btnB" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_remote_circle" android:backgroundTint="#10B981" android:elevation="2dp" android:gravity="center" android:text="B" android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" />
+                <TextView android:id="@+id/btnD" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_remote_circle" android:backgroundTint="#3B82F6" android:elevation="2dp" android:gravity="center" android:text="D" android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Bottom Media Controls -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/dpadArea">
+                <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_marginHorizontal="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/rewine_left" /></FrameLayout>
+                <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_marginHorizontal="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/square" /></FrameLayout>
+                <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_marginHorizontal="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/play_pause" /></FrameLayout>
+                <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_marginHorizontal="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/red_dot" /></FrameLayout>
+                <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_marginHorizontal="6dp" android:background="@drawable/bg_remote_circle"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/double_right" /></FrameLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

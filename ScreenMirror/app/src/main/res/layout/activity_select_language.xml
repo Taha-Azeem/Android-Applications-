@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <!-- Top Blue Header Section -->
+    <View
+        android:id="@+id/viewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_top_blue_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Back Button -->
+    <FrameLayout
+        android:id="@+id/btnBack"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bg_back_button_circle"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back_white" />
+    </FrameLayout>
+
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Select Language"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_regular"
+        android:textFontWeight="700"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    <!-- Main Body Card Container -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_white_sheet_rounded"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="24dp">
+
+            <!-- 1. English (Selected State) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:background="@drawable/bg_selected_language_item"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagEng"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/english"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEnglish"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="English"
+                    android:textColor="#2A3547"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckEng"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagEng"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckEng"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 2. French -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langFrench"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagFrench"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/french"
+                    app:layout_constraintBottom_toTopOf="@id/divFrench"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFrench"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="French"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divFrench"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckFrench"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagFrench"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckFrench"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divFrench"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divFrench"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagFrench" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 3. German -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langGerman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagGerman"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/german"
+                    app:layout_constraintBottom_toTopOf="@id/divGerman"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvGerman"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="German"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divGerman"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckGerman"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagGerman"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckGerman"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divGerman"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divGerman"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagGerman" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 4. Hebrew -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langHebrew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagHebrew"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/hebrew"
+                    app:layout_constraintBottom_toTopOf="@id/divHebrew"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHebrew"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Hebrew"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divHebrew"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckHebrew"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagHebrew"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckHebrew"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divHebrew"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divHebrew"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagHebrew" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 5. Hindi -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langHindi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagHindi"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/hindi"
+                    app:layout_constraintBottom_toTopOf="@id/divHindi"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHindi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Hindi"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divHindi"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckHindi"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagHindi"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckHindi"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divHindi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divHindi"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagHindi" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 6. Italic -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langItalic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagItalic"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/italic"
+                    app:layout_constraintBottom_toTopOf="@id/divItalic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvItalic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Italic"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divItalic"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckItalic"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagItalic"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckItalic"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divItalic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divItalic"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagItalic" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 7. Korean -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langKorean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagKorean"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/korean"
+                    app:layout_constraintBottom_toTopOf="@id/divKorean"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvKorean"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Korean"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divKorean"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckKorean"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagKorean"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckKorean"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divKorean"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divKorean"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagKorean" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 8. Poland -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langPoland"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagPoland"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/poland"
+                    app:layout_constraintBottom_toTopOf="@id/divPoland"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPoland"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Poland"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divPoland"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckPoland"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagPoland"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckPoland"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divPoland"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divPoland"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagPoland" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 9. Brazil -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/langBrazil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <ImageView
+                    android:id="@+id/ivFlagBrazil"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/brazil"
+                    app:layout_constraintBottom_toTopOf="@id/divBrazil"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBrazil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Brazil"
+                    android:textColor="#364152"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toTopOf="@id/divBrazil"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCheckBrazil"
+                    app:layout_constraintStart_toEndOf="@id/ivFlagBrazil"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCheckBrazil"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/divBrazil"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divBrazil"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="#E8ECEF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivFlagBrazil" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

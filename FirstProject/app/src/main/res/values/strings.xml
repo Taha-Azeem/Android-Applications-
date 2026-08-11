@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirstProject</string>
+    <string name="img_desc"> Basic Practice </string>
+    <string name="textView"> This is just the basic text view for practice you have to practice.I am just checking the data and everything else</string>
+</resources>
