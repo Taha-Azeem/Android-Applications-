@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/mainbackground"
+    android:layout_height="match_parent"
+    tools:context=".SignUP">
+
+    <TextView
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:startIconDrawable="@drawable/person"
+        app:helperText="Required"
+        android:hint="Name"
+        android:padding="15dp"
+        android:background="@drawable/layout_background"
+        android:layout_margin="30dp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Email"
+        android:layout_margin="30dp"
+        android:padding="15dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/layout_background"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Password"
+        android:textColor="@android:color/white"
+        android:layout_margin="30dp"
+        android:padding="15dp"
+        app:endIconMode="password_toggle"
+        android:background="@drawable/layout_background"
+        android:layout_marginBottom="16dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Sign Up"
+        android:layout_margin="20dp"
+        android:textColor="@android:color/white"
+        android:background="@color/cardview_light_background"
+        android:layout_marginBottom="16dp"
+        />
+
+</LinearLayout>
