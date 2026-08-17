@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Button is checked", Toast.LENGTH_SHORT).show()
             }
             else{
+
                 binding.checkbox.buttonTintList = ColorStateList.valueOf(Color.RED)
                 Toast.makeText(this, "Button is not checked", Toast.LENGTH_SHORT).show()
             }
