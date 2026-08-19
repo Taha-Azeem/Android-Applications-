@@ -1,5 +1,6 @@
 package com.example.recyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.img6
         )
 
-        var newsHeadingArray = arrayOf(
+        val newsHeadingArray = arrayOf(
             "U.K. Foreign Secretary James Cleverly raises issue of BBC tax searches with EAM Jaishankar",
             "Cooking gas prices hiked by ₹50 for domestic, ₹350.50 for commercial cylinders",
             "Joe Biden appoints two prominent Indian-American corporate leaders to his Export Council",
@@ -43,15 +44,29 @@ class MainActivity : AppCompatActivity() {
             "Largest gathering of Foreign Ministers hosted by any G20 presidency: Foreign Secretary Vinay Kwatra"
         )
 
+        val newsContent = arrayOf(
+            getString(R.string.news_content), getString(R.string.news_content), getString(R.string.news_content), getString(R.string.news_content), getString(R.string.news_content), getString(R.string.news_content)
+        )
+
         myRecyclerView.layoutManager = LinearLayoutManager(this)
 
         newsArrayList = arrayListOf<News>()
         for(index in newsImageArray.indices){
-            val news = News(newsHeadingArray[index], newsImageArray[index])
+            val news = News(newsHeadingArray[index], newsImageArray[index], newsContent[index])
             newsArrayList.add(news)
         }
+        var MyAdapter = MyAdapter(newsArrayList, this)
 
-        myRecyclerView.adapter = MyAdapter(newsArrayList, this)
+        myRecyclerView.adapter = MyAdapter
+        MyAdapter.setItemClickListener(object : MyAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                val intent = Intent(this@MainActivity, NewsDetailsActivity::class.java)
+                intent.putExtra("heading", newsArrayList[position].newsHeading)
+                intent.putExtra("imageId", newsArrayList[position].newsImage)
+                intent.putExtra("newsContent", newsArrayList[position].newsContent)
+                startActivity(intent)
+            }
+        })
 
     }
 }
