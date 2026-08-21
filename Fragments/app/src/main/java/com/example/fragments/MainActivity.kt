@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.fragments.ui.login.LoginFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         }
         val buttonClock = findViewById<Button>(R.id.btnTime)
         val buttonExam = findViewById<Button>(R.id.btnExam)
+        val buttonValidate = findViewById<Button>(R.id.btnValidate)
+
 
 
         buttonClock.setOnClickListener {
@@ -28,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         buttonExam.setOnClickListener {
             replaceFrameWithFragment(Exam_Fragment())
+        }
+
+        buttonValidate.setOnClickListener {
+
+            replaceFrameWithFragment(LoginFragment())
         }
 
         replaceFrameWithFragment(Clock_Fragment())
