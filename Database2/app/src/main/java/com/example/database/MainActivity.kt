@@ -1,8 +1,10 @@
 package com.example.database
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -45,6 +47,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "User data inserted successfully", Toast.LENGTH_SHORT).show()
 
             }
+        }
+
+        val signIntext = findViewById<TextView>(R.id.tvSignIN)
+        signIntext.setOnClickListener {
+            val openSignInActivity = Intent(this, SignInActivity::class.java)
+            startActivity(openSignInActivity)
         }
     }
 }
