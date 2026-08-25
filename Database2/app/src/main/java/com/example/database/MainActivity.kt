@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 etPassword.text.clear()
                 etUserName.text.clear()
                 Toast.makeText(this, "User data inserted successfully", Toast.LENGTH_SHORT).show()
-
             }
         }
 
@@ -54,5 +53,7 @@ class MainActivity : AppCompatActivity() {
             val openSignInActivity = Intent(this, SignInActivity::class.java)
             startActivity(openSignInActivity)
         }
+
+
     }
 }

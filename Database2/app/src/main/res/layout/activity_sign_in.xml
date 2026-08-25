@@ -39,4 +39,23 @@
         android:layout_gravity="center"
         android:text="SIGN IN" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoogleSignIn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+
+        app:icon="@drawable/google"
+        app:iconGravity="textStart"
+        android:textColor="@android:color/black"
+        android:text="Continue with Google"
+        android:backgroundTint="@color/white"
+        app:iconTint="@null"
+        app:strokeColor="@color/yellow"
+        app:strokeWidth="2dp"
+        app:cornerRadius="8dp"
+        />
+
+
 </LinearLayout>
